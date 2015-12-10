@@ -1,0 +1,35 @@
+# Pupppet Fundamentals
+
+w/ Amy Marco
+
+# 07 Classification
+
+## Node Definitions
+
+    node 'foo.puppetlabs.com' { 
+      include ssh
+      include apache
+      include mysql
+    }
+
+*Regex*
+    node /^web\d{3}\.puppetlabs\.com$/ { 
+      include ssh
+      include apache
+      include mysql
+      include web_app
+    }
+
+## Default node
+
+    node default {
+      notify { ... }
+    }
+
+## Node definition matching
+
+Node definitions only match the most specific and will ignore the more general
+
+    node /web.org$/ { ... }
+
+    node 'my.web.org' { ... # ignores the above regex node }
