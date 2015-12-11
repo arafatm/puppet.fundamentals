@@ -2,6 +2,12 @@
 
 w/ Amy Marco
 
+https://downloads.puppetlabs.com/training/
+
+https://github.com/puppetlabs/courseware
+
+
+
 # 07 Classification
 
 ## Node Definitions
@@ -30,6 +36,6 @@ w/ Amy Marco
 
 Node definitions only match the most specific and will ignore the more general
 
-    node /web.org$/ { ... }
+    node /web.org$/   { ... }
+    node 'my.web.org' { ... } # ignores the above regex 
 
-    node 'my.web.org' { ... # ignores the above regex node }
